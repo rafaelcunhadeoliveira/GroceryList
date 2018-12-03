@@ -25,6 +25,12 @@
 		530D704C21B1D8890070F24C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 530D704B21B1D8890070F24C /* GoogleService-Info.plist */; };
 		53A8008E21B1DDC100396D3A /* FIrebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A8008D21B1DDC100396D3A /* FIrebaseController.swift */; };
 		6C12962F8E6D2826E25C63B2 /* Pods_GroceryListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FF55D0EDFE6E156D85E917 /* Pods_GroceryListTests.framework */; };
+		9E3802C121B33095001870FA /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C021B33095001870FA /* Item.swift */; };
+		9E3802C321B33202001870FA /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C221B33202001870FA /* List.swift */; };
+		9E3802CA21B3417D001870FA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C821B3417D001870FA /* Loading.swift */; };
+		9E3802CB21B3417D001870FA /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C921B3417D001870FA /* AlertHelper.swift */; };
+		9E3802CD21B4CBAE001870FA /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802CC21B4CBAE001870FA /* ViewControllerExtension.swift */; };
+		9E3802CF21B4CBF4001870FA /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +77,12 @@
 		530D704B21B1D8890070F24C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53A8008D21B1DDC100396D3A /* FIrebaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIrebaseController.swift; sourceTree = "<group>"; };
 		5A8F2C4C47FA11B249C5FDB3 /* Pods-GroceryListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryListUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryListUITests/Pods-GroceryListUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9E3802C021B33095001870FA /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		9E3802C221B33202001870FA /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		9E3802C821B3417D001870FA /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
+		9E3802C921B3417D001870FA /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		9E3802CC21B4CBAE001870FA /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		A9B6A6CFCAD510F7D01FD846 /* Pods-GroceryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA53CEEC25599974B7DB62B /* Pods-GroceryListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryListTests/Pods-GroceryListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF2B65DECFA9E79BA462D022 /* Pods_GroceryListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroceryListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,10 +165,11 @@
 		530D700121B190E10070F24C /* GroceryList */ = {
 			isa = PBXGroup;
 			children = (
+				9E3802BF21B33047001870FA /* Model */,
 				53A8008C21B1DD6800396D3A /* Controller */,
 				530D704B21B1D8890070F24C /* GoogleService-Info.plist */,
 				530D703521B191490070F24C /* Resources */,
-				530D703321B191300070F24C /* view */,
+				530D703321B191300070F24C /* View */,
 				530D700221B190E20070F24C /* AppDelegate.swift */,
 				530D701121B190E40070F24C /* Info.plist */,
 				530D700921B190E20070F24C /* GroceryList.xcdatamodeld */,
@@ -182,7 +195,7 @@
 			path = GroceryListUITests;
 			sourceTree = "<group>";
 		};
-		530D703321B191300070F24C /* view */ = {
+		530D703321B191300070F24C /* View */ = {
 			isa = PBXGroup;
 			children = (
 				530D703721B199ED0070F24C /* Cells */,
@@ -190,13 +203,17 @@
 				530D700E21B190E40070F24C /* LaunchScreen.storyboard */,
 				530D700621B190E20070F24C /* Main.storyboard */,
 			);
-			path = view;
+			path = View;
 			sourceTree = "<group>";
 		};
 		530D703521B191490070F24C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9E3802CC21B4CBAE001870FA /* ViewControllerExtension.swift */,
+				9E3802C921B3417D001870FA /* AlertHelper.swift */,
+				9E3802C821B3417D001870FA /* Loading.swift */,
 				530D700C21B190E40070F24C /* Assets.xcassets */,
+				9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -227,6 +244,15 @@
 				53A8008D21B1DDC100396D3A /* FIrebaseController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9E3802BF21B33047001870FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E3802C021B33095001870FA /* Item.swift */,
+				9E3802C221B33202001870FA /* List.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,14 +470,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3802CB21B3417D001870FA /* AlertHelper.swift in Sources */,
+				9E3802C121B33095001870FA /* Item.swift in Sources */,
+				9E3802CD21B4CBAE001870FA /* ViewControllerExtension.swift in Sources */,
+				9E3802CF21B4CBF4001870FA /* TextFieldExtension.swift in Sources */,
 				530D704321B19DD40070F24C /* ListDescriptionTableViewCell.swift in Sources */,
 				530D704121B19DC30070F24C /* ListDetailsTableViewCell.swift in Sources */,
 				530D700B21B190E20070F24C /* GroceryList.xcdatamodeld in Sources */,
 				530D700321B190E20070F24C /* AppDelegate.swift in Sources */,
 				53A8008E21B1DDC100396D3A /* FIrebaseController.swift in Sources */,
+				9E3802C321B33202001870FA /* List.swift in Sources */,
 				530D703921B19A500070F24C /* ListViewController.swift in Sources */,
 				530D703D21B19A7D0070F24C /* AddItemsViewController.swift in Sources */,
 				530D703B21B19A5E0070F24C /* ListDetailViewController.swift in Sources */,
+				9E3802CA21B3417D001870FA /* Loading.swift in Sources */,
 				530D703F21B19AFC0070F24C /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,35 +9,49 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Add Items View Controller-->
+        <!--Add-->
         <scene sceneID="LCL-6R-2Js">
             <objects>
-                <viewController id="Zg1-sB-UAn" customClass="AddItemsViewController" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddItemsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Zg1-sB-UAn" customClass="AddItemsViewController" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlf-Kj-iqs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1va-ZC-CUP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="576"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1va-ZC-CUP">
+                                <rect key="frame" x="0.0" y="35" width="375" height="576"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BZR-iO-T6f">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="376"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1qq-mm-dq1">
                                                 <rect key="frame" x="20" y="20" width="335" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="vxc-gB-xAK"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Zg1-sB-UAn" id="roO-Ai-h0z"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="List Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JHB-qS-LIs">
                                                 <rect key="frame" x="20" y="80" width="335" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="vel-m3-Rd0"/>
+                                                </constraints>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Zg1-sB-UAn" id="WE1-RE-LK0"/>
+                                                </connections>
                                             </textField>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="wYI-rf-dIy">
                                                 <rect key="frame" x="20" y="140" width="335" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="216" id="7zJ-Q8-ZUn"/>
+                                                </constraints>
                                                 <date key="date" timeIntervalSinceReferenceDate="565286519.291659">
                                                     <!--2018-11-30 16:01:59 +0000-->
                                                 </date>
@@ -68,6 +82,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Zg1-sB-UAn" id="xVB-p3-95J"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRy-fg-Y1k">
                                                 <rect key="frame" x="20" y="80" width="335" height="30"/>
@@ -77,6 +94,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Zg1-sB-UAn" id="pAi-JS-hoM"/>
+                                                </connections>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unity Measure" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kjh-1N-cuh">
                                                 <rect key="frame" x="20" y="140" width="335" height="30"/>
@@ -86,6 +106,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Zg1-sB-UAn" id="BhO-ak-gKE"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -121,11 +144,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ohj-ep-fgN" firstAttribute="trailing" secondItem="JQt-bh-vQy" secondAttribute="trailing" constant="20" id="1YI-bz-jP6"/>
+                            <constraint firstItem="1va-ZC-CUP" firstAttribute="leading" secondItem="Ohj-ep-fgN" secondAttribute="leading" id="93c-wb-Jew"/>
+                            <constraint firstItem="1va-ZC-CUP" firstAttribute="trailing" secondItem="Ohj-ep-fgN" secondAttribute="trailing" id="CIj-ce-0xD"/>
+                            <constraint firstItem="1va-ZC-CUP" firstAttribute="top" secondItem="Ohj-ep-fgN" secondAttribute="top" constant="15" id="RpJ-71-dkv"/>
                             <constraint firstItem="JQt-bh-vQy" firstAttribute="leading" secondItem="Ohj-ep-fgN" secondAttribute="leading" constant="20" id="bvu-1d-CXV"/>
                             <constraint firstItem="Ohj-ep-fgN" firstAttribute="bottom" secondItem="JQt-bh-vQy" secondAttribute="bottom" constant="30" id="duI-Bi-iTN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ohj-ep-fgN"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Add" id="Lzh-pC-x1Q"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="datePicker" destination="wYI-rf-dIy" id="Cqb-0g-ASg"/>
@@ -154,7 +181,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A6z-lB-m7f" customClass="ListTableViewCell" customModule="GroceryList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListTableViewCell" id="A6z-lB-m7f" customClass="ListTableViewCell" customModule="GroceryList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A6z-lB-m7f" id="Bxz-QQ-u1E">
@@ -212,7 +239,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="r7Q-2j-ygL" id="kou-lg-dTx"/>
-                        <segue destination="QjE-aO-nYa" kind="show" id="nq4-hZ-ZEn"/>
+                        <segue destination="QjE-aO-nYa" kind="show" identifier="detailsSegue" id="nq4-hZ-ZEn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -227,11 +254,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rl6-jx-RPU">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rl6-jx-RPU">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="62" id="e6n-Sb-B2y" customClass="ListDescriptionTableViewCell" customModule="GroceryList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListDescriptionTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListDescriptionTableViewCell" rowHeight="62" id="e6n-Sb-B2y" customClass="ListDescriptionTableViewCell" customModule="GroceryList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e6n-Sb-B2y" id="6V7-dD-AL0">
@@ -256,7 +283,7 @@
                                             <outlet property="descriptionLabel" destination="qDk-CI-NzH" id="0Q2-4L-6hh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="99" id="MGe-GV-7dO" customClass="ListDetailsTableViewCell" customModule="GroceryList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListDetailsTableViewCell" rowHeight="99" id="MGe-GV-7dO" customClass="ListDetailsTableViewCell" customModule="GroceryList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="90" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MGe-GV-7dO" id="uX1-hp-KQP">
