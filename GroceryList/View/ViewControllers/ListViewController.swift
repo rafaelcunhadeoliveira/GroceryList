@@ -26,9 +26,11 @@ class ListViewController: UIViewController {
 
     func getLists() {
         Loading.shared.showLoading()
-        lists = FirebaseController.shared.getLists()
-        tableView.reloadData()
-        Loading.shared.hideLoading()
+        FirebaseController.shared.getLists(completion: {(listsResponse) in
+            self.lists = listsResponse
+            self.tableView.reloadData()
+            Loading.shared.hideLoading()
+        })
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

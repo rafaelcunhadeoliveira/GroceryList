@@ -27,15 +27,18 @@ class ListDetailViewController: UIViewController {
 
     func getItems() {
         Loading.shared.showLoading()
-        let allItems = FirebaseController.shared.getItems()
-        guard let id = listId else { return }
-        for item in allItems {
-            if item.listId == id {
-                items.append(item)
+        FirebaseController.shared.getItems(completion: {(itemsResponse) in
+            var itemsTemp: [Item] = []
+            guard let id = self.listId else { return }
+            for item in itemsResponse {
+                if item.listId == id {
+                    itemsTemp.append(item)
+                }
             }
-        }
-        tableView.reloadData()
-        Loading.shared.hideLoading()
+            self.items = itemsTemp
+            self.tableView.reloadData()
+            Loading.shared.hideLoading()
+        })
     }
     
     @IBAction func addItemButtonClicked(_ sender: Any) {

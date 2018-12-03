@@ -24,9 +24,9 @@ class AlertHelper {
         AlertHelper.shared.show(tapHandler: {_ in})
     }
     
-    static func show(title: String = "",
-                     message: String = "",
-                     buttons: [String] = [],
+    static func show(title: String = "Ops, somethins went wrong",
+                     message: String = "Try again later",
+                     buttons: [String] = ["OK"],
                      tapHandler: @escaping (Int) -> Void) {
         AlertHelper.shared.show(title: title, message: message,
                                 buttons: buttons, tapHandler: tapHandler)

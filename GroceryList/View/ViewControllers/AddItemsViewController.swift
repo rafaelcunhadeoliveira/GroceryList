@@ -37,6 +37,7 @@ class AddItemsViewController: UIViewController {
     func setupLayout() {
         listView.isHidden = !isNewList
         itemView.isHidden = isNewList
+        datePicker.datePickerMode = .date
     }
 
     func setObject() {
@@ -105,6 +106,7 @@ class AddItemsViewController: UIViewController {
         guard let item = self.item else { return }
         FirebaseController.shared.saveItem(item: item)
         Loading.shared.hideLoading()
+        AlertHelper.show(title: "Success", message: "List has been saved!", tapHandler: {_ in })
     }
 
     func saveList() {
@@ -112,5 +114,6 @@ class AddItemsViewController: UIViewController {
         guard let list = self.list else { return }
         FirebaseController.shared.saveList(list: list)
         Loading.shared.hideLoading()
+        AlertHelper.show(title: "Success", message: "Item has been saved!", tapHandler: {_ in })
     }
 }

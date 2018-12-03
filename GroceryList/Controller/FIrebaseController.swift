@@ -23,18 +23,18 @@ class FirebaseController {
     let itemsRef = Database.database().reference(withPath: "Items")
 
     func saveList(list: List) {
-        let listRef = listsRef.child(list.title.lowercased())
+        let listRef = listsRef.childByAutoId()
         listRef.setValue(list.toAnyObj())
     }
 
     func saveItem(item: Item) {
-        let itemRef = itemsRef.child(item.title.lowercased())
+        let itemRef = itemsRef.childByAutoId()
         itemRef.setValue(item.toAnyObj())
     }
 
-    func getLists() -> [List] {
-        var lists: [List] = []
+    func getLists(completion: @escaping ([List]) -> Void) {
         listsRef.observe(.value, with: { snapshot in
+            var lists: [List] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let list = List.init(snapshot: snapshot) {
@@ -42,20 +42,20 @@ class FirebaseController {
                 }
                 
             }
+            completion(lists)
         })
-        return lists
     }
 
-    func getItems() -> [Item] {
+    func getItems(completion: @escaping ([Item]) -> Void) {
         var items: [Item] = []
-        listsRef.observe(.value, with: { snapshot in
+        itemsRef.observe(.value, with: { snapshot in
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let item = Item.init(snapshot: snapshot) {
                     items.append(item)
                 }
             }
+            completion(items)
         })
-        return items
     }
 }
