@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ListDetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -22,7 +23,15 @@ class ListDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getItems()
+        setUpProperties()
+    }
+    
+    func setUpProperties() {
+        if FirebaseController.shared.verifyInternet() {
+            getItems()
+        } else {
+            AlertHelper.show(message: "No Internet Connection", tapHandler: {_ in})
+        }
     }
 
     func getItems() {
@@ -78,6 +87,4 @@ extension ListDetailViewController: UITableViewDataSource {
         }
         
     }
-    
-    
 }

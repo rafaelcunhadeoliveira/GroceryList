@@ -30,7 +30,6 @@
 		9E3802CA21B3417D001870FA /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C821B3417D001870FA /* Loading.swift */; };
 		9E3802CB21B3417D001870FA /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802C921B3417D001870FA /* AlertHelper.swift */; };
 		9E3802CD21B4CBAE001870FA /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802CC21B4CBAE001870FA /* ViewControllerExtension.swift */; };
-		9E3802CF21B4CBF4001870FA /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +81,6 @@
 		9E3802C821B3417D001870FA /* Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		9E3802C921B3417D001870FA /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		9E3802CC21B4CBAE001870FA /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		A9B6A6CFCAD510F7D01FD846 /* Pods-GroceryList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryList/Pods-GroceryList.debug.xcconfig"; sourceTree = "<group>"; };
 		CBA53CEEC25599974B7DB62B /* Pods-GroceryListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroceryListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroceryListTests/Pods-GroceryListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EF2B65DECFA9E79BA462D022 /* Pods_GroceryListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GroceryListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -213,7 +211,6 @@
 				9E3802C921B3417D001870FA /* AlertHelper.swift */,
 				9E3802C821B3417D001870FA /* Loading.swift */,
 				530D700C21B190E40070F24C /* Assets.xcassets */,
-				9E3802CE21B4CBF4001870FA /* TextFieldExtension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -473,7 +470,6 @@
 				9E3802CB21B3417D001870FA /* AlertHelper.swift in Sources */,
 				9E3802C121B33095001870FA /* Item.swift in Sources */,
 				9E3802CD21B4CBAE001870FA /* ViewControllerExtension.swift in Sources */,
-				9E3802CF21B4CBF4001870FA /* TextFieldExtension.swift in Sources */,
 				530D704321B19DD40070F24C /* ListDescriptionTableViewCell.swift in Sources */,
 				530D704121B19DC30070F24C /* ListDetailsTableViewCell.swift in Sources */,
 				530D700B21B190E20070F24C /* GroceryList.xcdatamodeld in Sources */,

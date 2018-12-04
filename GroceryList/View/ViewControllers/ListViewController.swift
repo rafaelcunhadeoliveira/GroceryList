@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SystemConfiguration
 
 class ListViewController: UIViewController {
 
@@ -21,9 +22,17 @@ class ListViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        getLists()
+        setUpProperties()
     }
 
+    func setUpProperties() {
+        if FirebaseController.shared.verifyInternet() {
+            getLists()
+        } else {
+            AlertHelper.show(message: "No Internet Connection", tapHandler: {_ in})
+        }
+    }
+    
     func getLists() {
         Loading.shared.showLoading()
         FirebaseController.shared.getLists(completion: {(listsResponse) in

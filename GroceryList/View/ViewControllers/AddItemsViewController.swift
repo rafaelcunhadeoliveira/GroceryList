@@ -117,3 +117,10 @@ class AddItemsViewController: UIViewController {
         AlertHelper.show(title: "Success", message: "Item has been saved!", tapHandler: {_ in })
     }
 }
+
+extension AddItemsViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+    }
+}
